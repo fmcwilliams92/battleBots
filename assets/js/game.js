@@ -19,11 +19,27 @@ var fight = function() {
   // log a message to the console so we know the command worked
   console.log(playerName + " attacked " + enemyName + ". " + enemyName + " now has " +enemyHealth + " health remaining.");
 
+  // check to see if the player has died
+  if (enemyHealth <= 0) {
+    console.log(enemyName + " has died!");
+  }
+  else {
+    window.alert(enemyName + " still alive " + enemyHealth + " health left.");
+  }
+
   // subtract the value of the "enemyAttack" from the "playerHealth" and use the result to update the "playerHealth"
   playerHealth = playerHealth - enemyAttack;
 
   // log a message to the console so we know the command worked
   console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining.");
+
+  // check to see if our robot has died
+  if (playerHealth <= 0) {
+    console.log(playerName + " has died!");
+  }
+  else {
+    window.alert(playerName + " still has " + playerHealth + " health left.");
+  }
 };
 
 // this calls or "executes" the function
