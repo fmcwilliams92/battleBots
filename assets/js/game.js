@@ -1,18 +1,30 @@
-// this prompt asks for your robots name
-var playerName = window.prompt("What is the name of your robot?");
-console.log(playerName);
+var playerName = window.prompt("What is your robots name?");
+var playerHealth = 100;
+var playerAttack = 10;
 
-console.log("This logs a string, good for leaving yourself a message");
-// this will do math and log 20
+// you can also log multiple values at once 
+console.log(playerName, playerHealth, playerAttack);
 
-console.log(10 + 10);
-// what is this
+var enemyName = "Putin";
+var enemyHealth = 50;
+var enemyAttack = 12;
+console.log(enemyName, enemyHealth, enemyAttack);
 
-console.log("Our robots name is " + playerName);
+var fight = function() {
+  window.alert("Welcome to Robot Wars!");
 
-// this creates a function named "fight"
-function fight() {
-  window.alert("The fight has begun!");
-}
+  // subtract the value of "playerAttack" from "enemyHealth" and use the result to update the "enemyHealth"
+  enemyHealth = enemyHealth - playerAttack;
 
+  // log a message to the console so we know the command worked
+  console.log(playerName + " attacked " + enemyName + ". " + enemyName + " now has " +enemyHealth + " health remaining.");
+
+  // subtract the value of the "enemyAttack" from the "playerHealth" and use the result to update the "playerHealth"
+  playerHealth = playerHealth - enemyAttack;
+
+  // log a message to the console so we know the command worked
+  console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining.");
+};
+
+// this calls or "executes" the function
 fight();
